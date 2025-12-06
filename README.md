@@ -4,7 +4,6 @@
 
 🚀 **Deployed on Vercel**: [https://express-typescript-server-one.vercel.app/]
 
-> Replace the URL above with your actual Vercel deployment URL
 
 ---
 
