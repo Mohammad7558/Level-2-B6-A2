@@ -14,9 +14,7 @@ const initDb = async () => {
       email VARCHAR(150) NOT NULL UNIQUE,
       password TEXT NOT NULL,
       phone VARCHAR(15) NOT NULL,
-      role VARCHAR(50) NOT NULL DEFAULT 'customer',
-      created_at TIMESTAMP DEFAULT NOW(),
-      updated_at TIMESTAMP DEFAULT NOW()
+      role VARCHAR(50) NOT NULL DEFAULT 'customer'
     )
   `);
 
@@ -31,9 +29,7 @@ const initDb = async () => {
       type VARCHAR(50) NOT NULL,
       registration_number VARCHAR(100) NOT NULL UNIQUE,
       daily_rent_price DECIMAL(10, 2) NOT NULL,
-      availability_status VARCHAR(50) NOT NULL DEFAULT 'available',
-      created_at TIMESTAMP DEFAULT NOW(),
-      updated_at TIMESTAMP DEFAULT NOW()
+      availability_status VARCHAR(50) NOT NULL DEFAULT 'available'
     )
   `);
 
@@ -49,9 +45,7 @@ const initDb = async () => {
       rent_start_date DATE NOT NULL,
       rent_end_date DATE NOT NULL,
       total_price DECIMAL(10, 2) NOT NULL,
-      status VARCHAR(50) NOT NULL DEFAULT 'active',
-      created_at TIMESTAMP DEFAULT NOW(),
-      updated_at TIMESTAMP DEFAULT NOW()
+      status VARCHAR(50) NOT NULL DEFAULT 'active'
     )
   `);
 
