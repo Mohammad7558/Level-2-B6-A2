@@ -215,23 +215,3 @@ curl -X POST http://localhost:8080/api/v1/bookings \
 | `npm test`      | Run test suite (not yet implemented)        |
 
 ---
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-
-## 📄 License
-
-This project is licensed under the ISC License - see the `package.json` file for details.
-
----
-
-## 📞 Support
-
-For issues, questions, or suggestions, please open an issue in the repository.
-
----
-
-**Last Updated**: December 2025
