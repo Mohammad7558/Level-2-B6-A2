@@ -145,7 +145,7 @@ const updateBookingStatus = async (
   if (status === 'returned') {
     // Update booking
     const result = await pool.query(
-      'UPDATE bookings SET status = $1, updated_at = NOW() WHERE id = $2 RETURNING *',
+      'UPDATE bookings SET status = $1 WHERE id = $2 RETURNING *',
       [status, bookingId]
     );
 
@@ -172,7 +172,7 @@ const updateBookingStatus = async (
   // Mark as cancelled
   if (status === 'cancelled') {
     const result = await pool.query(
-      'UPDATE bookings SET status = $1, updated_at = NOW() WHERE id = $2 RETURNING *',
+      'UPDATE bookings SET status = $1 WHERE id = $2 RETURNING *',
       [status, bookingId]
     );
 

@@ -21,25 +21,30 @@ const GetUserById = async (userId: any) => {
 const UpdateUserById = async (userId: any, payload: Record<string, any>) => {
   const { name, email, phone, role } = payload;
 
-  let query = 'UPDATE users SET updated_at = NOW()';
+  let query = 'UPDATE users SET';
   const values: any[] = [];
   let paramCount = 1;
+  let isFirst = true;
 
   if (name !== undefined) {
-    query += `, name = $${paramCount++}`;
+    query += `${isFirst ? '' : ','} name = $${paramCount++}`;
     values.push(name);
+    isFirst = false;
   }
   if (email !== undefined) {
-    query += `, email = $${paramCount++}`;
+    query += `${isFirst ? '' : ','} email = $${paramCount++}`;
     values.push(email);
+    isFirst = false;
   }
   if (phone !== undefined) {
-    query += `, phone = $${paramCount++}`;
+    query += `${isFirst ? '' : ','} phone = $${paramCount++}`;
     values.push(phone);
+    isFirst = false;
   }
   if (role !== undefined) {
-    query += `, role = $${paramCount++}`;
+    query += `${isFirst ? '' : ','} role = $${paramCount++}`;
     values.push(role);
+    isFirst = false;
   }
 
   query += ` WHERE id = $${paramCount} RETURNING id, name, email, phone, role`;
